@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<Style>
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    font-style:oblique;
+    font-size:18px;
+    margin: 0;
+}
+body:before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-image:  linear-gradient( 
+115deg, rgba(244, 67, 54,0.5), rgba(240, 98, 146,0.4) ),url(https://ecommerce.surtifamiliar.com/backend/admin/backend/web/archivosDelCliente/categorias/images/20201103110920-Categorias-Mascotas16044197609841.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+.container {
+    width: 100%;
+    margin: 3.125rem auto 0 auto;
+}
+@media (min-width: 576px){
+.container {
+    max-width: 540px;
+}}
+@media (min-width: 768px){
+.container {
+    max-width: 720px;
+}}
+#title{
+    font-variant: small-caps;
+    text-align:center;
+}
+#description{
+text-align:center;
+color: white;
+}
+#survey-form{
+background:rgb(229, 57, 53);
+padding:40px;
+border-radius:9px;
+font-weight:bold;
+}
+.form-group{
+    margin: 0 auto 20px auto;
+    padding: 0.25rem;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+input, button, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.form-control{
+width:100%;
+height:30px;
+border-radius: 0.25rem;}
+.form-control:hover{
+border-color:red;
+outline:0;
+box-shadow:0 0 0 0.2rem PaleVioletRed;
+}
+.input-radio, .input-checkbox{
+min-height: 20px;
+min-width: 20px;
+}
+
+input[type="radio"]:checked {
+box-shadow: 0 0 0 4px blue;
+}
+        
+input[type="checkbox"]:checked {
+box-shadow: 0 0 0 3px blue;
+}
+.input-textarea{
+width:100%;
+height:80px;
+resize: vertical;
+}
+.input-textarea:hover{
+border-color:red;
+outline:0;
+box-shadow:0 0 0 0.2rem PaleVioletRed;
+}
+.clue {
+margin-left: 0.25rem;
+font-size: 0.9rem;
+color: #e4e4e4;
+}
+.submit-button{
+width:100%;
+height:40px;
+background:blue;
+border:none;
+}
+.submit-button:hover{
+background:PaleVioletRed;
+}
+
+
+</Style>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+  </head>
+  <body>
+  <div class="container">
+  <header class="header">
+<h1  id = "title">Pet Survey Form</h1>
+<p id = "description">Thank you for taking the time to help us know your pet taste. </p></header>
+<form id = "survey-form">
+<div class="form-group">
+<label id="name-label" for="name"> Name </label><br>
+<input type="text" name="name" id="name"placeholder= "Name" class="form-control" required><br>
+</div>
+<div class="form-group">
+<label id="email-label" for="email"> Email </label><br>
+<input type="email" name="email" id="email" placeholder= "Email" class="form-control" required><br>
+</div>
+<div class="form-group">
+<label id="age-label" for="age"> Age <span class="clue">(Optional)</span></label><br>
+<input type="number" name="age" id="number" min="9" max="99" placeholder= "Age" class="form-control">
+</div>
+<div class="form-group">
+<p> Which option best describes you?</p>
+<select id="dropdown" name="role" class="form-control" required>
+<option Disabled selected value>Select</option> 
+<option value="Children">Children from 9 to 14 years old</option>
+<option value="Adolescent ">Adolescent from 15 to 20 years old</option>
+<option value="Young">Young people from 21 to 35 years old</option>
+<option value="Adult">Adult People from 36 to 65 years old</option>
+<option value="Older adult">Older adult People from 65 to 99 years old</option>
+</select>
+</div>
+<div class="form-group">
+<p> Do you like pets?</p>
+<label for="yes">
+<input  type="radio"  name="my-input" id="yes" class="input-radio" >Yes
+</label>
+<label for="no">
+<input  type="radio" name="my-input" id="no" class="input-radio" >No
+</label>
+</div>
+<div class="form-group">
+<p> What pets do you have at home? <span class="clue">(Check all that apply)</span></p>
+<label>
+<input name="prefer" value="cat" type="checkbox"  class="input-checkbox" >Cat
+</label>
+<label>
+<input name="prefer" value="dog" type="checkbox"  class="input-checkbox" >Dog
+</label>
+<label>
+<input name="prefer" value="rabit" type="checkbox"  class="input-checkbox" >Rabit
+</label>
+<label>
+<input name="prefer" value="monkey" type="checkbox"  class="input-checkbox" >Monkey
+</label>
+<label>
+<input name="prefer" value="others" type="checkbox"  class="input-checkbox" >Others
+</label>
+<label>
+<input name="prefer" value="none" type="checkbox"  class="input-checkbox" >None
+</label>
+</div>
+<div class="form-group">
+<label id="sex-label" for="sex"> Sex </label><br>
+<label for="male">
+<input type="radio" name="my-input" id="male" class="input-radio" >Male</label>
+<label for="female">
+<input type="radio" name="my-input" id="female"class="input-radio">Female</label>
+</div>
+<div class="form-group">
+<p> Any comments?</p>
+<textarea id="comments" name="comment" placeholder="Enter your comment here..."  class="input-textarea" ></textarea>
+</div>
+<div class="form-group">
+<button type="submit" id="submit"  class="submit-button" >Submit</button>
+</div>
+</form>
+</div>
+  </body>
+ </html> 
